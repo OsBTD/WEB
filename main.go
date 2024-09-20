@@ -5,9 +5,9 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+
 	"webb/ascii"
 )
-
 func Home(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		fmt.Fprintln(w, "error hh 404")
