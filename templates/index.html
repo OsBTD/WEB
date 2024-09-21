@@ -4,26 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ascii_Art_Web</title>
-    <link rel="stylesheet" href="style.css">
-
+    <title>ASCII ART WEB</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body style="text-align: center">
     <h1>ASCII ART WEB</h1>
-    <form method="post" action="/ascii">
-        <textarea name="text" placeholder="enter your text" maxlength="1000" required> </textarea><br>
-        <label for="standard">standard</label>
-        <input type="radio" name="banner" value="standard" id="standard" checked>
-        <label for="shadow">shadow</label>
-        <input type="radio" name="banner" value="shadow" id="shadow">
-        <label for="thinkertoy">thinkertoy</label>
-        <input type="radio" name="banner" value="thinkertoy" id="thinkertoy">
+
+    <form action="/ascii" method="POST">
+        <textarea name="text" rows="4" cols="50"></textarea>
+        <br>
+        <select name="banner">
+            <option value="standard">standard</option>
+            <option value="shadow">shadow</option>
+            <option value="thinkertoy">thinkertoy</option>
+        </select>
+        <br>
         <button type="submit">Generate Art</button>
         <button type="reset">Delete All</button>
-        <pre>{{.}}</pre>
-        <button><a href="/">Home</a></button>
     </form>
+
+    <pre id="ascii-art">{{- . -}}</pre>
+
+    <a href="/">Home</a>
 </body>
 
 </html>

@@ -8,6 +8,7 @@ import (
 
 	"webb/ascii"
 )
+
 func Home(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		fmt.Fprintln(w, "error hh 404")
@@ -34,6 +35,9 @@ func Ascii(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	fs := http.FileServer(http.Dir("templates"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
+
 	http.HandleFunc("/", Home)
 	http.HandleFunc("/ascii", Ascii)
 	log.Println("http://localhost:8080")
