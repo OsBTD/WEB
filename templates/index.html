@@ -4,33 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASCII ART Generator</title>
+    <title>ASCII Art Generator</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 
-<body style="text-align: center">
-    <div class="banner">
-        <img src="templates\images\Image2.png" alt="Banner">
+<body>
+    <div class="IMG">
+        <img src="/images/Image3.png" alt="ASCII Art Generator">
     </div>
 
-    <main>
+    <main role="main">
         <form action="/ascii" method="POST">
-            <textarea name="text" rows="4" cols="50"></textarea>
-            <br>
+            <input type="text" name="text" placeholder="Enter text">
             <select name="banner">
                 <option value="standard">standard</option>
                 <option value="shadow">shadow</option>
                 <option value="thinkertoy">thinkertoy</option>
             </select>
-            <br>
             <button type="submit">Generate Art</button>
-            <button type="reset">Delete All</button>
         </form>
 
-        <pre id="ascii-art">{{- . -}}</pre>
+        <button onclick="document.getElementById('ascii-art').innerHTML = ''">Delete All</button>
+
+        <pre id="ascii-art">
+            {{- . -}}
+        </pre>
 
         <a href="/">Home</a>
-
     </main>
 </body>
 
