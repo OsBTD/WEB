@@ -9,8 +9,8 @@
 }
 
 body {
-    background: #ffffff;
-    color: #000000;
+    background: #000000;
+    color: #ffffff;
 }
 
 #ascii-art {
@@ -30,8 +30,29 @@ body {
 }
 
 .IMG {
-    width: auto;
-    height: auto;
-    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    /* Adjust this value based on your needs */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+.IMG img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 50vh;
+    /* This ensures the image doesn't take up more than half the viewport height */
+    object-fit: contain;
+}
+
+/* @media screen and (max-width: 768px) {
+    .IMG {
+        padding: 10px;
+    }
+
+    .IMG img {
+        max-height: 30vh;
+    }
+} */
